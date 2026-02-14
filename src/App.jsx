@@ -3,7 +3,7 @@ import "./App.css";
 
 const questions = [
   {
-    q: "Do you remember our first conversation? 😊",
+    q: "Do you remember our month of memories? 😊",
     options: ["Yes ❤️", "Of course I do 💖"],
   },
   {
@@ -17,6 +17,10 @@ const questions = [
   {
     q: "Who steals the blanket at night? 🛌",
     options: ["You 😆", "I do 😇"],
+  },
+  {
+    q: "Am I lucky to have you? 🍀",
+    options: ["Very lucky 😘", "The luckiest ❤️"],
   },
   {
     q: "Do you know how much I love you? 💕",
@@ -99,10 +103,8 @@ function FinalScreen() {
         <br />
         the answer will always be <span>YOU ❤️</span>
       </h1>
-
+      <br /><br />
       <p>
-        Thank you for being my love, my peace, and my forever.
-        <br />
         Happy Valentine’s Day 💕
       </p>
 
@@ -115,9 +117,21 @@ function FinalScreen() {
 function Sparkles() {
   return (
     <div className="sparkles">
-      {Array.from({ length: 35 }).map((_, i) => (
-        <span key={i}>✨</span>
-      ))}
+      {Array.from({ length: 40 }).map((_, i) => {
+        const style = {
+          left: Math.random() * 100 + "vw",
+          animationDelay: Math.random() * 5 + "s",
+          animationDuration: 4 + Math.random() * 4 + "s",
+          fontSize: 0.8 + Math.random() * 1.2 + "rem",
+        };
+
+        return (
+          <span key={i} style={style}>
+            ✨
+          </span>
+        );
+      })}
     </div>
   );
 }
+
